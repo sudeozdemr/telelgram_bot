@@ -16,18 +16,17 @@ async def custom_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 #Responses
 def handle_response(text: str) -> str:
-     processed: str = text.lower()
+    processed: str = text.lower()
 
-     if 'hello' in processed:
-         return 'Hey there!'
-     
-     if 'How are you' in processed:
-         return 'I am good!'
-     
-     if 'I love python' in processed:
-         return 'Remember to subscribe!'
-     
-     return'I do not understant what you wrote...'
+    print('Random', processed)
+
+    if 'how are you' in processed:
+        return 'I am good!'
+
+    if 'I love python' in processed:
+        return 'Remember to subscribe!'
+
+    return'I do not understant what you wrote...'
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message_type: str = update.message.chat.type
@@ -66,5 +65,4 @@ app.add_error_handler(error)
 #Pols the bot
 print('Polling...')
 app.run_polling(poll_interval=3)
-
 
