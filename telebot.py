@@ -21,12 +21,14 @@ def handle_response(text: str) -> str:
     if 'hello' in processed:
          return 'Hey there!'
      
-    if 'How are you' in processed:
+    if 'how are you' in processed:
          return 'I am good!'
      
     if 'I love python' in processed:
          return 'Remember to subscribe!'
-     
+    
+    if 'sude' in processed:
+        return 'I love youuuu <3'
     return'I do not understant what you wrote...'
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -43,7 +45,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print('Bot: ', response)
     await update.message.reply_text(response)
     
-TOKEN= '6513847081:AAEjSnAE3vKOFuAQU2IMqfimyxGgRdzpCG4'
+file=open("token.txt")
+TOKEN=file.read().strip()
 
 async def error(update: update, context: ContextTypes.DEFAULT_TYPE):
      print(f'Update {update} caused error {context.error}')    
