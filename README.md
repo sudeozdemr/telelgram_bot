@@ -1,4 +1,3 @@
-# fin_pro
+# Telegram Bot
 #Sude ÖZDEMİR
-#Finishing project 
 #Implemented telegram bot
